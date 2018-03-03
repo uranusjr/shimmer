@@ -1,0 +1,11 @@
+[package]
+name = "shimmer"
+version = "0.1.0"
+authors = ["Tzu-ping Chung <uranusjr@gmail.com>"]
+
+[[bin]]
+name = "shm"
+path = "src/main.rs"
+
+[dependencies]
+clap = "2.30.0"

@@ -1,0 +1,10 @@
+[package]
+name = "shim"
+version = "0.1.0"
+authors = ["Tzu-ping Chung <uranusjr@gmail.com>"]
+
+[[bin]]
+name = "shim"
+
+[dependencies]
+winapi = { version = "0.3.2", features = ["consoleapi", "jobapi2", "wincon"] }
