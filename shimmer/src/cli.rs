@@ -1,12 +1,10 @@
-extern crate clap;
-
 use std::env::current_dir;
 use std::error::Error;
 use std::ffi::OsStr;
 use std::io;
 use std::path::PathBuf;
 
-use self::clap::{App, Arg, ArgMatches};
+use clap::{Arg, ArgMatches};
 
 macro_rules! bail {
     ( $key:expr, $error:expr ) => {
@@ -17,10 +15,7 @@ macro_rules! bail {
 }
 
 pub fn parse<'a>() -> ArgMatches<'a> {
-    let app = App::new(env!("CARGO_PKG_NAME"))
-        .version(env!("CARGO_PKG_VERSION"))
-        .author(env!("CARGO_PKG_AUTHORS"))
-        .about(env!("CARGO_PKG_DESCRIPTION"))
+    let app = app_from_crate!()
         .arg(Arg::with_name("source")
             .required(true)
             .help("Executable to shim"))

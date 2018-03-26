@@ -1,3 +1,6 @@
+#[macro_use]
+extern crate clap;
+
 mod cli;
 
 use std::env::current_exe;
